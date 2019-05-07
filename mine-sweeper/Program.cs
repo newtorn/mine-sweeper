@@ -14,5 +14,8 @@ namespace mine_sweeper
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Loadscreen());
         }
+        public static void startGame() {
+
+        }
     }
 }

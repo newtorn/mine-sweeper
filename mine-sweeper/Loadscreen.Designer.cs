@@ -28,20 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.load = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.load)).BeginInit();
             this.SuspendLayout();
+            // 
+            // load
+            // 
+            this.load.Location = new System.Drawing.Point(0, 0);
+            this.load.Margin = new System.Windows.Forms.Padding(0);
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(500, 310);
+            this.load.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.load.TabIndex = 0;
+            this.load.TabStop = false;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 6000;
+            this.timer.Tick += new System.EventHandler(this.startGame);
             // 
             // Loadscreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(494, 304);
+            this.ControlBox = false;
+            this.Controls.Add(this.load);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Loadscreen";
-            this.Text = "Loadscreen";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.load)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox load;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
