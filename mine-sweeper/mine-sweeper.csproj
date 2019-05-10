@@ -93,6 +93,33 @@
   <ItemGroup>
     <None Include="img\favicon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_default_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_default_minimise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_default_zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_over_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_over_minimise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_over_zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_inactive_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_inactive_minimise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\control_button\ctrlbtn_inactive_zoom.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
