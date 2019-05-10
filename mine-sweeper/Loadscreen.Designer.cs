@@ -51,14 +51,15 @@
             // 
             // Loadscreen
             // 
-            this.ClientSize = new System.Drawing.Size(494, 304);
+            this.ClientSize = new System.Drawing.Size(500, 310);
             this.ControlBox = false;
             this.Controls.Add(this.load);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loadscreen";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Resize += new System.EventHandler(this.resize);
             ((System.ComponentModel.ISupportInitialize)(this.load)).EndInit();
             this.ResumeLayout(false);
 

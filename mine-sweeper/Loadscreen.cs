@@ -28,5 +28,10 @@ namespace mine_sweeper
             this.timer.Dispose();
             this.newGame.Show();
         }
+
+        private void resize(object sender, EventArgs e)
+        {
+            Common.SetWindowRegion(this);
+        }
     }
 }

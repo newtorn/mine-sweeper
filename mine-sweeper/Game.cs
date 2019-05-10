@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace mine_sweeper
 {
@@ -23,11 +24,6 @@ namespace mine_sweeper
 
         }
 
-        private void createNewGraphics(object sender, EventArgs e)
-        {
-
-        }
-
         private void exit(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
@@ -36,6 +32,11 @@ namespace mine_sweeper
         private void update(object sender, EventArgs e)
         {
 
+        }
+
+        private void resize(object sender, EventArgs e)
+        {
+            Common.SetWindowRegion(this);
         }
     }
 }
