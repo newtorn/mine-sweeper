@@ -33,10 +33,9 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.titleBar = new System.Windows.Forms.Panel();
             this.controlBar = new System.Windows.Forms.Panel();
-            this.controlBarOver = new System.Windows.Forms.Label();
             this.zoomButton = new System.Windows.Forms.Button();
             this.minimiseButton = new System.Windows.Forms.Button();
-            this.closeButton = new mine_sweeper.CustomButton();
+            this.closeButton = new System.Windows.Forms.Button();
             this.titleBar.SuspendLayout();
             this.controlBar.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +60,6 @@
             // controlBar
             // 
             this.controlBar.BackColor = System.Drawing.Color.Transparent;
-            this.controlBar.Controls.Add(this.controlBarOver);
             this.controlBar.Controls.Add(this.zoomButton);
             this.controlBar.Controls.Add(this.minimiseButton);
             this.controlBar.Controls.Add(this.closeButton);
@@ -72,17 +70,6 @@
             this.controlBar.Size = new System.Drawing.Size(82, 24);
             this.controlBar.TabIndex = 3;
             this.controlBar.MouseLeave += new System.EventHandler(this.controlBar_MouseLeave);
-            // 
-            // controlBarOver
-            // 
-            this.controlBarOver.BackColor = System.Drawing.Color.Transparent;
-            this.controlBarOver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.controlBarOver.Location = new System.Drawing.Point(0, 0);
-            this.controlBarOver.Margin = new System.Windows.Forms.Padding(0);
-            this.controlBarOver.Name = "controlBarOver";
-            this.controlBarOver.Size = new System.Drawing.Size(82, 24);
-            this.controlBarOver.TabIndex = 4;
-            this.controlBarOver.MouseEnter += new System.EventHandler(this.controlBarOver_MouseEnter);
             // 
             // zoomButton
             // 
@@ -118,7 +105,6 @@
             // closeButton
             // 
             this.closeButton.BackColor = System.Drawing.Color.Transparent;
-            this.closeButton.BackgroundImage = global::mine_sweeper.Properties.Resources.ctrlbtn_default_close;
             this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -149,6 +135,7 @@
             this.Deactivate += new System.EventHandler(this.Game_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.exit);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.redraw);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Game_MouseMove);
             this.Resize += new System.EventHandler(this.resize);
             this.titleBar.ResumeLayout(false);
             this.controlBar.ResumeLayout(false);
@@ -163,19 +150,7 @@
         private System.Windows.Forms.Panel controlBar;
         private System.Windows.Forms.Button zoomButton;
         private System.Windows.Forms.Button minimiseButton;
-        private CustomButton closeButton;
-        private System.Windows.Forms.Label controlBarOver;
+        private System.Windows.Forms.Button closeButton;
     }
 
-    public class CustomButton : System.Windows.Forms.Button
-    {
-        protected override bool ShowFocusCues
-        {
-            get
-            {
-                //return base.ShowFocusCues;
-                return false;
-            }
-        }
-    }
 }

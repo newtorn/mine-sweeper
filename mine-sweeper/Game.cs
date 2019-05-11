@@ -16,7 +16,6 @@ namespace mine_sweeper
         {
             InitializeComponent();
             this.Icon = global::mine_sweeper.Properties.Resources.favicon;
-            this.controlBarOver.Parent = this.closeButton;
             this.timer.Start();
         }
 
@@ -55,6 +54,7 @@ namespace mine_sweeper
                 this.Top = Control.MousePosition.Y - mousePoint.Y;
                 this.Left = Control.MousePosition.X - mousePoint.X;
             }
+
         }
         #endregion
 
@@ -87,16 +87,16 @@ namespace mine_sweeper
             set_button_status(ButtonStatus.INACTIVE);
         }
 
-        private void controlBarOver_MouseEnter(object sender, EventArgs e)
-        {
-            set_button_status(ButtonStatus.OVER);
-            this.controlBarOver.Visible = false;
-            this.controlBar.Focus();
-        }
+//        private void controlBarOver_MouseEnter(object sender, EventArgs e)
+//        {
+//            set_button_status(ButtonStatus.OVER);
+//            //this.controlBarOver.Visible = false;
+//            this.controlBar.Focus();
+//        }
 
         private void controlBar_MouseLeave(object sender, EventArgs e)
         {
-            this.controlBarOver.Visible = true;
+            //this.controlBarOver.Visible = true;
             set_button_status(ButtonStatus.DEFAULT);
         }
 
@@ -136,6 +136,15 @@ namespace mine_sweeper
             this.zoomButton.Image = ctrlbtn_zoom;
         }
         #endregion
+
+        private void Game_MouseMove(object sender, MouseEventArgs e)
+        {
+            set_button_status(ButtonStatus.DEFAULT);
+            if (e.X < 0 || e.X > 82 || e.Y < 0 || e.Y > 24)
+            {
+                set_button_status(ButtonStatus.OVER);
+            }
+        }
 
         #endregion
 
