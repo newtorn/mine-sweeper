@@ -12,6 +12,8 @@ namespace mine_sweeper
 {
     public partial class Game : Form
     {
+        private bool FormIsActived;
+
         public Game()
         {
             InitializeComponent();
@@ -54,7 +56,6 @@ namespace mine_sweeper
                 this.Top = Control.MousePosition.Y - mousePoint.Y;
                 this.Left = Control.MousePosition.X - mousePoint.X;
             }
-
         }
         #endregion
 
@@ -75,32 +76,6 @@ namespace mine_sweeper
         #endregion
 
         #region The status image of the controlBar button change
-
-        private void Game_Activated(object sender, EventArgs e)
-        {
-            set_button_status(ButtonStatus.DEFAULT);    
-        }
-
-        private void Game_Deactivate(object sender, EventArgs e)
-        {
-            this.titleBar.Focus(); // avoid the button in contralBar gets focus;
-            set_button_status(ButtonStatus.INACTIVE);
-        }
-
-//        private void controlBarOver_MouseEnter(object sender, EventArgs e)
-//        {
-//            set_button_status(ButtonStatus.OVER);
-//            //this.controlBarOver.Visible = false;
-//            this.controlBar.Focus();
-//        }
-
-        private void controlBar_MouseLeave(object sender, EventArgs e)
-        {
-            //this.controlBarOver.Visible = true;
-            set_button_status(ButtonStatus.DEFAULT);
-        }
-
-        #region
         private enum ButtonStatus {
             DEFAULT,
             INACTIVE,
@@ -111,7 +86,7 @@ namespace mine_sweeper
         private Bitmap ctrlbtn_minimise;
         private Bitmap ctrlbtn_zoom;
 
-        private void set_button_status(ButtonStatus status)
+        private void SetButtonStatus(ButtonStatus status)
         {
             switch (status)
             {
@@ -135,15 +110,28 @@ namespace mine_sweeper
             this.minimiseButton.Image = ctrlbtn_minimise;
             this.zoomButton.Image = ctrlbtn_zoom;
         }
-        #endregion
 
-        private void Game_MouseMove(object sender, MouseEventArgs e)
+        private void Game_Activated(object sender, EventArgs e)
         {
-            set_button_status(ButtonStatus.DEFAULT);
-            if (e.X < 0 || e.X > 82 || e.Y < 0 || e.Y > 24)
-            {
-                set_button_status(ButtonStatus.OVER);
-            }
+            FormIsActived = true;
+            SetButtonStatus(ButtonStatus.DEFAULT);    
+        }
+
+        private void Game_Deactivate(object sender, EventArgs e)
+        {
+            FormIsActived = false;
+            this.titleBar.Focus(); // avoid the button in contralBar gets focus;
+            SetButtonStatus(ButtonStatus.INACTIVE);
+        }
+
+        private void controlButton_MouseEnter(object sender, EventArgs e)
+        {
+            SetButtonStatus(ButtonStatus.OVER);
+        }
+
+        private void controlButton_MouseLeave(object sender, EventArgs e)
+        {
+            SetButtonStatus(FormIsActived ? ButtonStatus.DEFAULT : ButtonStatus.INACTIVE);
         }
 
         #endregion

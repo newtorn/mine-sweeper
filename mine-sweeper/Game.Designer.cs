@@ -36,6 +36,7 @@
             this.zoomButton = new System.Windows.Forms.Button();
             this.minimiseButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.titleBar.SuspendLayout();
             this.controlBar.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // 
             this.titleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.titleBar.Controls.Add(this.controlBar);
+            this.titleBar.Controls.Add(this.label1);
             this.titleBar.Location = new System.Drawing.Point(0, 0);
             this.titleBar.Margin = new System.Windows.Forms.Padding(0);
             this.titleBar.Name = "titleBar";
@@ -68,8 +70,7 @@
             this.controlBar.Name = "controlBar";
             this.controlBar.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
             this.controlBar.Size = new System.Drawing.Size(82, 24);
-            this.controlBar.TabIndex = 3;
-            this.controlBar.MouseLeave += new System.EventHandler(this.controlBar_MouseLeave);
+            this.controlBar.TabIndex = 4;
             // 
             // zoomButton
             // 
@@ -85,6 +86,8 @@
             this.zoomButton.Size = new System.Drawing.Size(14, 14);
             this.zoomButton.TabIndex = 3;
             this.zoomButton.UseVisualStyleBackColor = false;
+            this.zoomButton.MouseEnter += new System.EventHandler(this.controlButton_MouseEnter);
+            this.zoomButton.MouseLeave += new System.EventHandler(this.controlButton_MouseLeave);
             // 
             // minimiseButton
             // 
@@ -100,7 +103,9 @@
             this.minimiseButton.Size = new System.Drawing.Size(14, 14);
             this.minimiseButton.TabIndex = 2;
             this.minimiseButton.UseVisualStyleBackColor = false;
-            this.minimiseButton.Click += new System.EventHandler(this.minimiseButton_Click);
+            this.minimiseButton.Click += new System.EventHandler(this.minimiseButton_Click_1);
+            this.minimiseButton.MouseEnter += new System.EventHandler(this.controlButton_MouseEnter);
+            this.minimiseButton.MouseLeave += new System.EventHandler(this.controlButton_MouseLeave);
             // 
             // closeButton
             // 
@@ -117,7 +122,18 @@
             this.closeButton.Size = new System.Drawing.Size(14, 14);
             this.closeButton.TabIndex = 1;
             this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.controlButton_MouseEnter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.controlButton_MouseLeave);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(620, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Game
             // 
@@ -135,7 +151,6 @@
             this.Deactivate += new System.EventHandler(this.Game_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.exit);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.redraw);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Game_MouseMove);
             this.Resize += new System.EventHandler(this.resize);
             this.titleBar.ResumeLayout(false);
             this.controlBar.ResumeLayout(false);
@@ -151,6 +166,7 @@
         private System.Windows.Forms.Button zoomButton;
         private System.Windows.Forms.Button minimiseButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Label label1;
     }
 
 }
