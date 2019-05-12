@@ -21,35 +21,35 @@ namespace mine_sweeper
             this.timer.Start();
         }
 
-        private void redraw(object sender, PaintEventArgs e)
+        private void Game_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void exit(object sender, FormClosingEventArgs e)
+        private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
         }
 
-        private void update(object sender, EventArgs e)
+        private void GameUpdate(object sender, EventArgs e)
         {
 
         }
 
-        private void resize(object sender, EventArgs e)
+        private void Game_Resize(object sender, EventArgs e)
         {
             Common.SetWindowRegion(this);
         }
 
         #region None boder window move 
         private Point mousePoint = new Point();
-        private void titleBar_MouseDown(object sender, MouseEventArgs e)
+        private void titleBarOver_MouseDown(object sender, MouseEventArgs e)
         {
             this.mousePoint.X = e.X;
             this.mousePoint.Y = e.Y;
         }
 
-        private void titleBar_MouseMove(object sender, MouseEventArgs e)
+        private void titleBarOver_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -72,6 +72,10 @@ namespace mine_sweeper
             {
                 Application.Exit();
             }
+        }
+
+        private void zoomButton_Click(object sender, EventArgs e)
+        {
         }
         #endregion
 

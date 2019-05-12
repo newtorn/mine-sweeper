@@ -36,7 +36,7 @@
             this.zoomButton = new System.Windows.Forms.Button();
             this.minimiseButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleBarOver = new System.Windows.Forms.Label();
             this.titleBar.SuspendLayout();
             this.controlBar.SuspendLayout();
             this.SuspendLayout();
@@ -44,20 +44,18 @@
             // timer
             // 
             this.timer.Interval = 200;
-            this.timer.Tick += new System.EventHandler(this.update);
+            this.timer.Tick += new System.EventHandler(this.GameUpdate);
             // 
             // titleBar
             // 
             this.titleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.titleBar.Controls.Add(this.controlBar);
-            this.titleBar.Controls.Add(this.label1);
+            this.titleBar.Controls.Add(this.titleBarOver);
             this.titleBar.Location = new System.Drawing.Point(0, 0);
             this.titleBar.Margin = new System.Windows.Forms.Padding(0);
             this.titleBar.Name = "titleBar";
             this.titleBar.Size = new System.Drawing.Size(620, 24);
             this.titleBar.TabIndex = 0;
-            this.titleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseDown);
-            this.titleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseMove);
             // 
             // controlBar
             // 
@@ -86,6 +84,7 @@
             this.zoomButton.Size = new System.Drawing.Size(14, 14);
             this.zoomButton.TabIndex = 3;
             this.zoomButton.UseVisualStyleBackColor = false;
+            this.zoomButton.Click += new System.EventHandler(this.zoomButton_Click);
             this.zoomButton.MouseEnter += new System.EventHandler(this.controlButton_MouseEnter);
             this.zoomButton.MouseLeave += new System.EventHandler(this.controlButton_MouseLeave);
             // 
@@ -103,7 +102,7 @@
             this.minimiseButton.Size = new System.Drawing.Size(14, 14);
             this.minimiseButton.TabIndex = 2;
             this.minimiseButton.UseVisualStyleBackColor = false;
-            this.minimiseButton.Click += new System.EventHandler(this.minimiseButton_Click_1);
+            this.minimiseButton.Click += new System.EventHandler(this.minimiseButton_Click);
             this.minimiseButton.MouseEnter += new System.EventHandler(this.controlButton_MouseEnter);
             this.minimiseButton.MouseLeave += new System.EventHandler(this.controlButton_MouseLeave);
             // 
@@ -122,18 +121,23 @@
             this.closeButton.Size = new System.Drawing.Size(14, 14);
             this.closeButton.TabIndex = 1;
             this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             this.closeButton.MouseEnter += new System.EventHandler(this.controlButton_MouseEnter);
             this.closeButton.MouseLeave += new System.EventHandler(this.controlButton_MouseLeave);
             // 
-            // label1
+            // titleBarOver
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(620, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.titleBarOver.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.titleBarOver.ForeColor = System.Drawing.Color.DarkRed;
+            this.titleBarOver.Location = new System.Drawing.Point(0, 0);
+            this.titleBarOver.Margin = new System.Windows.Forms.Padding(0);
+            this.titleBarOver.Name = "titleBarOver";
+            this.titleBarOver.Size = new System.Drawing.Size(620, 24);
+            this.titleBarOver.TabIndex = 0;
+            this.titleBarOver.Text = "MineSweeper";
+            this.titleBarOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.titleBarOver.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBarOver_MouseDown);
+            this.titleBarOver.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titleBarOver_MouseMove);
             // 
             // Game
             // 
@@ -149,9 +153,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Activated += new System.EventHandler(this.Game_Activated);
             this.Deactivate += new System.EventHandler(this.Game_Deactivate);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.exit);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.redraw);
-            this.Resize += new System.EventHandler(this.resize);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Game_Paint);
+            this.Resize += new System.EventHandler(this.Game_Resize);
             this.titleBar.ResumeLayout(false);
             this.controlBar.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -166,7 +170,7 @@
         private System.Windows.Forms.Button zoomButton;
         private System.Windows.Forms.Button minimiseButton;
         private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleBarOver;
     }
 
 }

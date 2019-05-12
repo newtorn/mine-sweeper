@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MsLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MsLabel.Designer.cs">
+      <DependentUpon>MsLabel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +128,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\cover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\mine_button\explosion.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\mine_button\flag.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\bomb.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
