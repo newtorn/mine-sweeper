@@ -46,13 +46,14 @@ namespace mine_sweeper
         private void titleBarOver_MouseDown(object sender, MouseEventArgs e)
         {
             this.mousePoint.X = e.X;
-            this.mousePoint.Y = e.Y;
+            this.mousePoint.Y = e.Y;Console.WriteLine("Hello");
         }
 
         private void titleBarOver_MouseMove(object sender, MouseEventArgs e)
-        {
+        {   
+            
             if (e.Button == MouseButtons.Left)
-            {
+            { 
                 this.Top = Control.MousePosition.Y - mousePoint.Y;
                 this.Left = Control.MousePosition.X - mousePoint.X;
             }
@@ -139,6 +140,32 @@ namespace mine_sweeper
         }
 
         #endregion
+
+        private void lowButton_Click(object sender, EventArgs e)
+        {
+            this.gamePanel.Width += 30;
+            this.gamePanel.Height += 30;
+        }
+
+        private void gamePanel_SizeChanged(object sender, EventArgs e)
+        {
+
+            this.backPanel.Height = this.gamePanel.Height;
+            this.backPanel.Width = this.gamePanel.Width + this.operateStrip.Width + this.displayStrip.Width;
+            this.titleBar.Width = this.backPanel.Width;
+            this.titleBarOver.Width = this.backPanel.Width;
+
+            int ptop = (this.operateStrip.Height - this.lowButton.Height -
+                this.middleButton.Height - this.highButton.Height - this.helpButton.Height) / 2;
+            this.operateStrip.Padding = new Padding(0, ptop, 0, 0);
+
+            ptop = (this.displayStrip.Height - this.stripSeparator.Height - this.scoreTitle.Height - 
+                this.scoreLabel.Height - this.timeTitle.Height - this.timeLabel.Height) / 2;
+            this.displayStrip.Padding = new Padding(0, ptop, 0, 0);
+
+            this.Width = this.backPanel.Width;
+            this.Height = this.backPanel.Height + this.titleBar.Height * 2;
+        }
 
     }
 }
