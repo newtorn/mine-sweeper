@@ -12,13 +12,41 @@ namespace mine_sweeper
 {
     public partial class Game : Form
     {
+        #region Decalare Vars
         private bool FormIsActived;
+        private MsLabel[,] labels;
+        private Graphics graphics;
+        private int countBombs;
+        private int points;
+        private bool won = false;
+        #endregion
 
         public Game()
         {
             InitializeComponent();
             this.Icon = global::mine_sweeper.Properties.Resources.favicon;
+
             this.timer.Start();
+        }
+
+        private void validate()
+        {
+
+        }
+
+        private void checkBombs()
+        {
+
+        }
+
+        private void setBombs(int countBombs)
+        {
+
+        }
+
+        private void createLabels(Point startPoint, System.Drawing.Size size, int width, int height)
+        {
+            
         }
 
         private void Game_Paint(object sender, PaintEventArgs e)
@@ -31,7 +59,7 @@ namespace mine_sweeper
             Environment.Exit(0);
         }
 
-        private void GameUpdate(object sender, EventArgs e)
+        private void Game_Update(object sender, EventArgs e)
         {
 
         }

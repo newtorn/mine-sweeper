@@ -22,3 +22,11 @@ C:\Users\44723\Desktop\mine-sweeper2\mine-sweeper\obj\x86\Debug\mine_sweeper.Gam
 C:\Users\44723\Desktop\mine-sweeper2\mine-sweeper\obj\x86\Debug\mine_sweeper.Loadscreen.resources
 C:\Users\44723\Desktop\mine-sweeper2\mine-sweeper\obj\x86\Debug\mine_sweeper.Properties.Resources.resources
 C:\Users\44723\Desktop\mine-sweeper2\mine-sweeper\obj\x86\Debug\mine-sweeper.csproj.GenerateResource.Cache
+E:\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.exe
+E:\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.pdb
+E:\mine-sweeper\mine-sweeper\bin\Debug\mine-sweeper.exe
+E:\mine-sweeper\mine-sweeper\bin\Debug\mine-sweeper.pdb
+E:\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Game.resources
+E:\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Loadscreen.resources
+E:\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Properties.Resources.resources
+E:\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csproj.GenerateResource.Cache

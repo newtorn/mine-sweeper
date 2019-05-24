@@ -60,7 +60,7 @@
             // timer
             // 
             this.timer.Interval = 200;
-            this.timer.Tick += new System.EventHandler(this.GameUpdate);
+            this.timer.Tick += new System.EventHandler(this.Game_Update);
             // 
             // titleBar
             // 
