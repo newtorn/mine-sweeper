@@ -46,7 +46,7 @@
             // 
             // timer
             // 
-            this.timer.Interval = 10;
+            this.timer.Interval = 6500;
             this.timer.Tick += new System.EventHandler(this.startGame);
             // 
             // Loadscreen
