@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             this.AutoSize = false;
-            this.Font = new System.Drawing.Font("Comic Sans MS", 12.3F);
+            this.Font = new System.Drawing.Font("Comic Sans MS", 8.3F);
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BackColor = System.Drawing.Color.DarkGray;

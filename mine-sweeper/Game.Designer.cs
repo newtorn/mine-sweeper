@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.titleBar = new System.Windows.Forms.Panel();
             this.controlBar = new System.Windows.Forms.Panel();
@@ -43,13 +42,12 @@
             this.scoreTitle = new System.Windows.Forms.ToolStripLabel();
             this.scoreLabel = new System.Windows.Forms.ToolStripLabel();
             this.stripSeparator = new System.Windows.Forms.ToolStripLabel();
-            this.timeTitle = new System.Windows.Forms.ToolStripLabel();
-            this.timeLabel = new System.Windows.Forms.ToolStripLabel();
+            this.bombTitle = new System.Windows.Forms.ToolStripLabel();
+            this.bombLabel = new System.Windows.Forms.ToolStripLabel();
             this.operateStrip = new System.Windows.Forms.ToolStrip();
             this.lowButton = new System.Windows.Forms.ToolStripButton();
             this.middleButton = new System.Windows.Forms.ToolStripButton();
             this.highButton = new System.Windows.Forms.ToolStripButton();
-            this.helpButton = new System.Windows.Forms.ToolStripButton();
             this.titleBar.SuspendLayout();
             this.controlBar.SuspendLayout();
             this.backPanel.SuspendLayout();
@@ -60,7 +58,7 @@
             // timer
             // 
             this.timer.Interval = 200;
-            this.timer.Tick += new System.EventHandler(this.Game_Update);
+            this.timer.Tick += new System.EventHandler(this.GameUpdate);
             // 
             // titleBar
             // 
@@ -70,7 +68,7 @@
             this.titleBar.Location = new System.Drawing.Point(0, 0);
             this.titleBar.Margin = new System.Windows.Forms.Padding(0);
             this.titleBar.Name = "titleBar";
-            this.titleBar.Size = new System.Drawing.Size(620, 24);
+            this.titleBar.Size = new System.Drawing.Size(680, 30);
             this.titleBar.TabIndex = 0;
             // 
             // controlBar
@@ -83,7 +81,7 @@
             this.controlBar.Margin = new System.Windows.Forms.Padding(0);
             this.controlBar.Name = "controlBar";
             this.controlBar.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.controlBar.Size = new System.Drawing.Size(82, 24);
+            this.controlBar.Size = new System.Drawing.Size(82, 30);
             this.controlBar.TabIndex = 4;
             // 
             // zoomButton
@@ -94,7 +92,7 @@
             this.zoomButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.zoomButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.zoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zoomButton.Location = new System.Drawing.Point(58, 5);
+            this.zoomButton.Location = new System.Drawing.Point(58, 8);
             this.zoomButton.Margin = new System.Windows.Forms.Padding(0);
             this.zoomButton.Name = "zoomButton";
             this.zoomButton.Size = new System.Drawing.Size(14, 14);
@@ -112,7 +110,7 @@
             this.minimiseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.minimiseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.minimiseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimiseButton.Location = new System.Drawing.Point(34, 5);
+            this.minimiseButton.Location = new System.Drawing.Point(34, 8);
             this.minimiseButton.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.minimiseButton.Name = "minimiseButton";
             this.minimiseButton.Size = new System.Drawing.Size(14, 14);
@@ -131,7 +129,7 @@
             this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.Color.Transparent;
-            this.closeButton.Location = new System.Drawing.Point(10, 5);
+            this.closeButton.Location = new System.Drawing.Point(10, 8);
             this.closeButton.Margin = new System.Windows.Forms.Padding(0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(14, 14);
@@ -144,12 +142,12 @@
             // titleBarOver
             // 
             this.titleBarOver.BackColor = System.Drawing.Color.Transparent;
-            this.titleBarOver.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.titleBarOver.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.titleBarOver.ForeColor = System.Drawing.Color.DarkRed;
             this.titleBarOver.Location = new System.Drawing.Point(0, 0);
             this.titleBarOver.Margin = new System.Windows.Forms.Padding(0);
             this.titleBarOver.Name = "titleBarOver";
-            this.titleBarOver.Size = new System.Drawing.Size(620, 24);
+            this.titleBarOver.Size = new System.Drawing.Size(680, 30);
             this.titleBarOver.TabIndex = 0;
             this.titleBarOver.Text = "MineSweeper";
             this.titleBarOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -162,19 +160,20 @@
             this.backPanel.Controls.Add(this.gamePanel);
             this.backPanel.Controls.Add(this.displayStrip);
             this.backPanel.Controls.Add(this.operateStrip);
-            this.backPanel.Location = new System.Drawing.Point(0, 24);
+            this.backPanel.Location = new System.Drawing.Point(0, 30);
             this.backPanel.Name = "backPanel";
-            this.backPanel.Size = new System.Drawing.Size(620, 216);
+            this.backPanel.Size = new System.Drawing.Size(680, 300);
             this.backPanel.TabIndex = 1;
             // 
             // gamePanel
             // 
             this.gamePanel.BackColor = System.Drawing.Color.DarkRed;
-            this.gamePanel.Location = new System.Drawing.Point(115, 0);
+            this.gamePanel.Location = new System.Drawing.Point(140, 0);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(390, 216);
+            this.gamePanel.Size = new System.Drawing.Size(400, 270);
             this.gamePanel.TabIndex = 3;
-            this.gamePanel.SizeChanged += new System.EventHandler(this.gamePanel_SizeChanged);
+            this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.PainGamePanel);
+            this.gamePanel.Resize += new System.EventHandler(this.ResizeGamePanel);
             // 
             // displayStrip
             // 
@@ -187,31 +186,33 @@
             this.scoreTitle,
             this.scoreLabel,
             this.stripSeparator,
-            this.timeTitle,
-            this.timeLabel});
+            this.bombTitle,
+            this.bombLabel});
             this.displayStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.displayStrip.Location = new System.Drawing.Point(505, 0);
+            this.displayStrip.Location = new System.Drawing.Point(540, 0);
             this.displayStrip.Name = "displayStrip";
-            this.displayStrip.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.displayStrip.Size = new System.Drawing.Size(115, 216);
+            this.displayStrip.Padding = new System.Windows.Forms.Padding(0, 90, 0, 0);
+            this.displayStrip.Size = new System.Drawing.Size(140, 300);
             this.displayStrip.TabIndex = 2;
             this.displayStrip.Text = "ToolStrip";
             // 
             // scoreTitle
             // 
             this.scoreTitle.AutoSize = false;
+            this.scoreTitle.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreTitle.Margin = new System.Windows.Forms.Padding(0);
             this.scoreTitle.Name = "scoreTitle";
             this.scoreTitle.Size = new System.Drawing.Size(115, 25);
-            this.scoreTitle.Text = "Score";
+            this.scoreTitle.Text = "Scores";
             // 
             // scoreLabel
             // 
             this.scoreLabel.AutoSize = false;
+            this.scoreLabel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.Margin = new System.Windows.Forms.Padding(0);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(115, 20);
-            this.scoreLabel.Text = "90";
+            this.scoreLabel.Text = "0";
             // 
             // stripSeparator
             // 
@@ -223,21 +224,23 @@
             this.stripSeparator.Padding = new System.Windows.Forms.Padding(0, 58, 0, 0);
             this.stripSeparator.Size = new System.Drawing.Size(115, 60);
             // 
-            // timeTitle
+            // bombTitle
             // 
-            this.timeTitle.AutoSize = false;
-            this.timeTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.timeTitle.Name = "timeTitle";
-            this.timeTitle.Size = new System.Drawing.Size(115, 25);
-            this.timeTitle.Text = "Time";
+            this.bombTitle.AutoSize = false;
+            this.bombTitle.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bombTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.bombTitle.Name = "bombTitle";
+            this.bombTitle.Size = new System.Drawing.Size(115, 25);
+            this.bombTitle.Text = "Bombs";
             // 
-            // timeLabel
+            // bombLabel
             // 
-            this.timeLabel.AutoSize = false;
-            this.timeLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(115, 20);
-            this.timeLabel.Text = "90";
+            this.bombLabel.AutoSize = false;
+            this.bombLabel.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.bombLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.bombLabel.Name = "bombLabel";
+            this.bombLabel.Size = new System.Drawing.Size(115, 20);
+            this.bombLabel.Text = "0";
             // 
             // operateStrip
             // 
@@ -249,13 +252,12 @@
             this.operateStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lowButton,
             this.middleButton,
-            this.highButton,
-            this.helpButton});
+            this.highButton});
             this.operateStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.operateStrip.Location = new System.Drawing.Point(0, 0);
             this.operateStrip.Name = "operateStrip";
-            this.operateStrip.Padding = new System.Windows.Forms.Padding(0, 26, 0, 0);
-            this.operateStrip.Size = new System.Drawing.Size(115, 216);
+            this.operateStrip.Padding = new System.Windows.Forms.Padding(0, 90, 0, 0);
+            this.operateStrip.Size = new System.Drawing.Size(140, 300);
             this.operateStrip.TabIndex = 1;
             this.operateStrip.Text = "ToolStrip";
             // 
@@ -264,10 +266,11 @@
             this.lowButton.AutoSize = false;
             this.lowButton.BackColor = System.Drawing.Color.Transparent;
             this.lowButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.lowButton.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.lowButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lowButton.Margin = new System.Windows.Forms.Padding(0);
             this.lowButton.Name = "lowButton";
-            this.lowButton.Size = new System.Drawing.Size(80, 40);
+            this.lowButton.Size = new System.Drawing.Size(100, 40);
             this.lowButton.Text = "LowLevel";
             this.lowButton.Click += new System.EventHandler(this.lowButton_Click);
             // 
@@ -275,49 +278,41 @@
             // 
             this.middleButton.AutoSize = false;
             this.middleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.middleButton.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.middleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.middleButton.Margin = new System.Windows.Forms.Padding(0);
             this.middleButton.Name = "middleButton";
-            this.middleButton.Size = new System.Drawing.Size(80, 40);
+            this.middleButton.Size = new System.Drawing.Size(100, 40);
             this.middleButton.Text = "MiddleLevel";
+            this.middleButton.Click += new System.EventHandler(this.middleButton_Click);
             // 
             // highButton
             // 
             this.highButton.AutoSize = false;
             this.highButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.highButton.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.highButton.Margin = new System.Windows.Forms.Padding(0);
             this.highButton.Name = "highButton";
-            this.highButton.Size = new System.Drawing.Size(80, 40);
+            this.highButton.Size = new System.Drawing.Size(100, 40);
             this.highButton.Text = "HighLevel";
-            // 
-            // helpButton
-            // 
-            this.helpButton.AutoSize = false;
-            this.helpButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.helpButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.helpButton.Margin = new System.Windows.Forms.Padding(0);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(80, 40);
-            this.helpButton.Text = "Help";
+            this.highButton.Click += new System.EventHandler(this.highButton_Click);
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(620, 264);
+            this.ClientSize = new System.Drawing.Size(680, 330);
             this.ControlBox = false;
             this.Controls.Add(this.backPanel);
             this.Controls.Add(this.titleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Activated += new System.EventHandler(this.Game_Activated);
             this.Deactivate += new System.EventHandler(this.Game_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Game_Paint);
             this.Resize += new System.EventHandler(this.Game_Resize);
             this.titleBar.ResumeLayout(false);
             this.controlBar.ResumeLayout(false);
@@ -345,13 +340,12 @@
         private System.Windows.Forms.ToolStripLabel scoreTitle;
         private System.Windows.Forms.ToolStripLabel scoreLabel;
         private System.Windows.Forms.ToolStripLabel stripSeparator;
-        private System.Windows.Forms.ToolStripLabel timeTitle;
-        private System.Windows.Forms.ToolStripLabel timeLabel;
+        private System.Windows.Forms.ToolStripLabel bombTitle;
+        private System.Windows.Forms.ToolStripLabel bombLabel;
         private System.Windows.Forms.ToolStrip operateStrip;
         private System.Windows.Forms.ToolStripButton lowButton;
         private System.Windows.Forms.ToolStripButton middleButton;
         private System.Windows.Forms.ToolStripButton highButton;
-        private System.Windows.Forms.ToolStripButton helpButton;
     }
 
 }

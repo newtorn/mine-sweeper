@@ -1,0 +1,8 @@
+C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\bin\Release\mine-sweeper.exe
+C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\bin\Release\mine-sweeper.pdb
+C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Release\mine_sweeper.Game.resources
+C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Release\mine_sweeper.Loadscreen.resources
+C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Release\mine_sweeper.Properties.Resources.resources
+C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Release\mine-sweeper.csproj.GenerateResource.Cache
+C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Release\mine-sweeper.exe
+C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Release\mine-sweeper.pdb

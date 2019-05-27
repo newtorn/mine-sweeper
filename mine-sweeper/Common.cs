@@ -10,16 +10,6 @@ namespace mine_sweeper
 {
      public class Common
     {
-        public static void SetWindowRegion(Form form)
-        {
-            System.Drawing.Drawing2D.GraphicsPath FormPath;
-            FormPath = new System.Drawing.Drawing2D.GraphicsPath();
-            Rectangle rect = new Rectangle(0, 0, form.Width, form.Height);
-            FormPath = GetRoundedRectPath(rect, 10);
-            form.Region = new Region(FormPath);
-
-        }
-
         private static GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
         {
             int diameter = radius;
@@ -42,6 +32,25 @@ namespace mine_sweeper
             path.AddArc(arcRect, 90, 90);
             path.CloseFigure();
             return path;
+        }
+
+        public static void SetWindowRegion(Form form)
+        {
+            System.Drawing.Drawing2D.GraphicsPath FormPath;
+            FormPath = new System.Drawing.Drawing2D.GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, form.Width, form.Height);
+            FormPath = GetRoundedRectPath(rect, 10);
+            form.Region = new Region(FormPath);
+
+        }
+
+        public static void SetWindowCenterScreen(Form form)
+        {
+            int width = System.Windows.Forms.SystemInformation.WorkingArea.Width;
+            int height = System.Windows.Forms.SystemInformation.WorkingArea.Height;
+            int fwidth = form.Size.Width;
+            int fheight = form.Size.Height;
+            form.SetDesktopLocation((width - fwidth) / 2, (height - fheight) / 2);
         }
     }
 

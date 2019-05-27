@@ -10,16 +10,19 @@ namespace mine_sweeper
 {
     public partial class MsLabel : Label
     {
+        #region Decalre DataMembers
         private int x, y;
         private int value;
         private bool bomb;
         private bool flag;
         private Timer timer;
+        #endregion
 
+        #region Init stuff
         public MsLabel(int x, int y) : base()
         {
             InitializeComponent();
-            this.Text = "Hello wolrd";
+            this.Text = "";
             this.ForeColor = System.Drawing.Color.White;
 
             this.value = 0;
@@ -29,15 +32,17 @@ namespace mine_sweeper
 
             this.x = x;
             this.y = y;
+
+            this.bomb = this.flag = false;
         }
 
-        public MsLabel(IContainer container)
+        public MsLabel (IContainer container)
         {
             container.Add(this);
 
             InitializeComponent();
         }
-
+        #endregion
 
         #region Properties
         public int Value
@@ -70,31 +75,38 @@ namespace mine_sweeper
         #endregion
 
         #region Methods
-        public void SeletLab()
+        public void SelectLab(string wic)
         {
-            if (flag)
+            this.Text = "";
+            this.Image = null;
+            switch (wic)
             {
-                this.Image = global::mine_sweeper.Properties.Resources.flag;
-            }
-            else if (bomb)
-            {
-                this.Image = global::mine_sweeper.Properties.Resources.explosion;
-                timer.Start();
-            }
-            else
-            {
-                this.Text = this.value.ToString();
-                this.Image = null;
+                case "flag":
+                    if (this.flag)
+                    {
+                        this.Image = global::mine_sweeper.Properties.Resources.flag;
+                    }
+                    break;
+                case "bomb":
+                    if (this.bomb)
+                    {
+                        this.Image = global::mine_sweeper.Properties.Resources.explosion;
+                        this.timer.Start();
+                    }
+                    break;
+                case "value":
+                    this.Text = this.value.ToString();
+                    break;
             }
         }
 
         public void RevealAll()
         {
-            if (bomb)
+            if (this.bomb)
             {
                 this.Image = global::mine_sweeper.Properties.Resources.bomb;
             }
-            else if (!flag)
+            else if (!this.flag)
             {
                 this.Text = this.value.ToString();
             }
@@ -105,9 +117,8 @@ namespace mine_sweeper
             this.Image = null;
             this.Text = "lost";
             this.ForeColor = System.Drawing.Color.Red;
-            timer.Stop();
+            this.timer.Stop();
         }
         #endregion
-
     }
 }
