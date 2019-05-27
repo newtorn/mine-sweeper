@@ -20,7 +20,6 @@ namespace mine_sweeper
             Lost
         }
         private bool FormIsActived;
-        private Graphics graphics;
         private MsLabel[,] labels;
         private int countBombs;
         private int scores;

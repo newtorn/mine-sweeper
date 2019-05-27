@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("mine-sweeper")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A simple mine sweeper for everyone")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Newtorn")]
 [assembly: AssemblyProduct("mine-sweeper")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © Newtorn2019")]
+[assembly: AssemblyTrademark("tutu-love-xinxin")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 使此程序集中的类型
