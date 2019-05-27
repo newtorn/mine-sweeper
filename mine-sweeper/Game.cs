@@ -132,7 +132,7 @@ namespace mine_sweeper
         private Bitmap ctrlbtn_minimise;
         private Bitmap ctrlbtn_zoom;
 
-        private void Setlabelstatus(labelstatus status)
+        private void SetLabelStatus(labelstatus status)
         {
             switch (status)
             {
@@ -160,24 +160,24 @@ namespace mine_sweeper
         private void Game_Activated(object sender, EventArgs e)
         {
             FormIsActived = true;
-            Setlabelstatus(labelstatus.DEFAULT);    
+            SetLabelStatus(labelstatus.DEFAULT);    
         }
 
         private void Game_Deactivate(object sender, EventArgs e)
         {
             FormIsActived = false;
             this.titleBar.Focus(); // avoid the button in contralBar gets focus;
-            Setlabelstatus(labelstatus.INACTIVE);
+            SetLabelStatus(labelstatus.INACTIVE);
         }
 
         private void controlButton_MouseEnter(object sender, EventArgs e)
         {
-            Setlabelstatus(labelstatus.OVER);
+            SetLabelStatus(labelstatus.OVER);
         }
 
         private void controlButton_MouseLeave(object sender, EventArgs e)
         {
-            Setlabelstatus(FormIsActived ? labelstatus.DEFAULT : labelstatus.INACTIVE);
+            SetLabelStatus(FormIsActived ? labelstatus.DEFAULT : labelstatus.INACTIVE);
         }
 
         #endregion
