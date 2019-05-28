@@ -50,11 +50,13 @@ namespace mine_sweeper
         private void StartGame()
         {
             this.firstClick = true;
+            this.scores = 0;
             this.status = GameStatus.Keep;
             Createlabels(new Size(45, 45), fieldSize.Width, fieldSize.Height);
             this.countBombs =
                 (int)Math.Round((decimal)((labels.GetLength(0) * 0.5) * (labels.GetLength(1) * 0.5)));
-            
+            this.bombLabel.Text = (this.countBombs - 1).ToString();
+            this.scoreLabel.Text = this.scores.ToString();
         }
 
         private void Createlabels(System.Drawing.Size size, int width, int height)
@@ -260,7 +262,7 @@ namespace mine_sweeper
                 {
                     this.firstClick = false;
                     this.curLabel = selectedLabel;
-                    SetBombs(countBombs);
+                    SetBombs();
                     this.timer.Start();
                 }
                 if (selectedLabel.Bomb)
@@ -284,7 +286,7 @@ namespace mine_sweeper
             }
         }
         
-        private void SetBombs(int countBombs)
+        private void SetBombs()
         {
             int setBombs = 1;
             while (setBombs != countBombs)

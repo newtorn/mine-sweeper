@@ -40,3 +40,4 @@ C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Game
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Loadscreen.resources
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Properties.Resources.resources
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csproj.GenerateResource.Cache
+C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csprojResolveAssemblyReference.cache
