@@ -276,15 +276,15 @@ namespace mine_sweeper
         private void SetBombs(int countBombs)
         {
             int setBombs = 1;
+            int x, y;
             while (setBombs != countBombs)
             {
                 bool retry = true;
-                Random random = new Random(Environment.TickCount % Convert.ToInt32(
-                    Environment.Version.ToString().Split('.')[0]));
+                Random random = new Random((int)((DateTime.Now.Ticks + Environment.TickCount) % Environment.TickCount));
                 do
                 {
-                    int x = random.Next(0, labels.GetLength(0) - 1);
-                    int y = random.Next(0, labels.GetLength(1) - 1);
+                    x = random.Next(0, labels.GetLength(0) - 1);
+                    y = random.Next(0, labels.GetLength(1) - 1);
 
                     if (!labels[x, y].Bomb)
                     {
@@ -292,8 +292,10 @@ namespace mine_sweeper
                         labels[x, y].Bomb = true;
                     }
                 } while (retry);
+                Console.Write( "(" + x + "," + y + ") ");
                 setBombs++;
             }
+            Console.WriteLine();
         }
 
         private void CheckBombs()
@@ -362,13 +364,12 @@ namespace mine_sweeper
         {
             int oldScores = this.scores;
             this.scores = 0;
-            foreach (MsLabel button in labels)
+            foreach (MsLabel label in labels)
             {
-                try
+                if(!label.Text.Equals(""))
                 {
-                    this.scores += Convert.ToInt32(button.Text);
+                    this.scores += Convert.ToInt32(label.Text);
                 }
-                catch (Exception e) { }
             }
             if (this.scores != oldScores)
             {

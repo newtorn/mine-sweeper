@@ -1,9 +1,4 @@
-C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\bin\Debug\mine-sweeper.exe
-C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\bin\Debug\mine-sweeper.pdb
 C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Properties.Resources.resources
-C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csproj.GenerateResource.Cache
-C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.exe
-C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.pdb
 C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Loadscreen.resources
 C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Game.resources
 C:\Users\44723\Desktop\mine-sweeper2\mine-sweeper\obj\x86\Debug\mine-sweeper.exe
@@ -30,3 +25,10 @@ C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Prop
 C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csproj.GenerateResource.Cache
 C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\MineSweeper.exe
 C:\Users\44723\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\MineSweeper.pdb
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\MineSweeper.exe
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\MineSweeper.pdb
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\bin\Debug\MineSweeper.exe
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\bin\Debug\MineSweeper.pdb
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\GenerateResource.write.1.tlog
