@@ -24,6 +24,9 @@ namespace mine_sweeper
         private int countBombs;
         private int scores;
         private GameStatus status;
+        private Size fieldSize;
+        private bool firstClick;
+        private MsLabel curLabel;
         #endregion
 
         #region Init stuff
@@ -44,15 +47,14 @@ namespace mine_sweeper
             this.gamePanel.Refresh();
         }
 
-        private void StartGame(System.Drawing.Size fieldSize)
+        private void StartGame()
         {
+            this.firstClick = true;
             this.status = GameStatus.Keep;
             Createlabels(new Size(45, 45), fieldSize.Width, fieldSize.Height);
-            countBombs =
+            this.countBombs =
                 (int)Math.Round((decimal)((labels.GetLength(0) * 0.5) * (labels.GetLength(1) * 0.5)));
-            SetBombs(countBombs);
-            CheckBombs();
-            this.timer.Start();
+            
         }
 
         private void Createlabels(System.Drawing.Size size, int width, int height)
@@ -222,17 +224,20 @@ namespace mine_sweeper
 
         private void lowButton_Click(object sender, EventArgs e)
         {
-            StartGame(new Size(9, 9));
+            this.fieldSize = new Size(9, 9);
+            StartGame();
         }
 
         private void middleButton_Click(object sender, EventArgs e)
         {
-            StartGame(new Size(10, 10));
+            this.fieldSize = new Size(10, 10);
+            StartGame();
         }
 
         private void highButton_Click(object sender, EventArgs e)
         {
-            StartGame(new Size(15, 15));
+            this.fieldSize = new Size(15, 15);
+            StartGame();
         }
         private void Game_Resize(object sender, EventArgs e)
         {
@@ -251,6 +256,14 @@ namespace mine_sweeper
             }
             else if (!selectedLabel.Flag)
             {
+                if (firstClick)
+                {
+                    this.firstClick = false;
+                    this.curLabel = selectedLabel;
+                    SetBombs(countBombs);
+                    CheckBombs();
+                    this.timer.Start();
+                }
                 if (selectedLabel.Bomb)
                 {
                     for (int i = 0; i < labels.GetLength(0); ++i)
@@ -266,7 +279,6 @@ namespace mine_sweeper
                 }
                 else
                 {
-                    Console.WriteLine(selectedLabel.Value);
                     selectedLabel.SelectLab("value");
                     this.scores += (int)(selectedLabel.Value * 1.6);
                 }
@@ -276,26 +288,30 @@ namespace mine_sweeper
         private void SetBombs(int countBombs)
         {
             int setBombs = 1;
-            int x, y;
+            for (int i = -1; i <= 1; ++i)
+            {
+                for (int j = -1; j <= 1; ++j)
+                {
+                    int x = curLabel.X + i;
+                    int y = curLabel.Y + j;
+                }
+            }
             while (setBombs != countBombs)
             {
                 bool retry = true;
                 Random random = new Random((int)((DateTime.Now.Ticks + Environment.TickCount) % Environment.TickCount));
                 do
                 {
-                    x = random.Next(0, labels.GetLength(0) - 1);
-                    y = random.Next(0, labels.GetLength(1) - 1);
-
-                    if (!labels[x, y].Bomb)
+                    int x = random.Next(0, labels.GetLength(0) - 1);
+                    int y = random.Next(0, labels.GetLength(1) - 1);
+                    if (!(x == curLabel.X && y == curLabel.Y) && !labels[x, y].Bomb)
                     {
                         retry = false;
                         labels[x, y].Bomb = true;
                     }
                 } while (retry);
-                Console.Write( "(" + x + "," + y + ") ");
                 setBombs++;
             }
-            Console.WriteLine();
         }
 
         private void CheckBombs()
@@ -320,6 +336,7 @@ namespace mine_sweeper
 
         private void GameUpdate(object sender, EventArgs e)
         {
+            if (this.firstClick) return;
             CheckNext();
             if (this.status == GameStatus.Keep)
             {
