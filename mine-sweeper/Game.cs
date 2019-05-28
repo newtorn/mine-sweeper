@@ -261,7 +261,6 @@ namespace mine_sweeper
                     this.firstClick = false;
                     this.curLabel = selectedLabel;
                     SetBombs(countBombs);
-                    CheckBombs();
                     this.timer.Start();
                 }
                 if (selectedLabel.Bomb)
@@ -288,14 +287,6 @@ namespace mine_sweeper
         private void SetBombs(int countBombs)
         {
             int setBombs = 1;
-            for (int i = -1; i <= 1; ++i)
-            {
-                for (int j = -1; j <= 1; ++j)
-                {
-                    int x = curLabel.X + i;
-                    int y = curLabel.Y + j;
-                }
-            }
             while (setBombs != countBombs)
             {
                 bool retry = true;
@@ -307,11 +298,26 @@ namespace mine_sweeper
                     if (!(x == curLabel.X && y == curLabel.Y) && !labels[x, y].Bomb)
                     {
                         retry = false;
-                        labels[x, y].Bomb = true;
+                        for (int i = -1; i <= 1; ++i)
+                        {
+                            for (int j = -1; j <= 1; ++j)
+                            {
+                                int cx = curLabel.X + i;
+                                int cy = curLabel.Y + j;
+                                if (x == cx && y == cy)
+                                {
+                                    retry = true;
+                                }
+                            }
+                        }
+                        if (!retry)
+                            labels[x, y].Bomb = true;
                     }
                 } while (retry);
                 setBombs++;
             }
+            curLabel.Value = 0;
+            CheckBombs();
         }
 
         private void CheckBombs()
