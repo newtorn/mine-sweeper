@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Newtorn")]
 [assembly: AssemblyProduct("mine-sweeper")]
-[assembly: AssemblyCopyright("Copyright © Newtorn2019")]
+[assembly: AssemblyCopyright("Copyright © Newtorn 2019")]
 [assembly: AssemblyTrademark("tutu-love-xinxin")]
 [assembly: AssemblyCulture("")]
 
