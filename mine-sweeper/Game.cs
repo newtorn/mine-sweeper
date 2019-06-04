@@ -269,6 +269,7 @@ namespace mine_sweeper
                         for (int j = 0; j < labels.GetLength(1); ++j)
                         {
                             labels[i, j].RevealAll();
+                            labels[i, j].BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
                             labels[i, j].MouseClick -= MouseClick;
                         }
                     }
@@ -278,6 +279,7 @@ namespace mine_sweeper
                 else
                 {
                     selectedLabel.SelectLab("value");
+                    selectedLabel.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
                     this.scores += (int)(selectedLabel.Value * 1.6);
                 }
             }
@@ -368,6 +370,7 @@ namespace mine_sweeper
                         if (x < 0 || x > labels.GetLength(0) - 1 ||
                             y < 0 || y > labels.GetLength(1) - 1 ||
                             labels[x, y].Flag || labels[x, y].Bomb) continue;
+                        labels[x, y].BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
                         labels[x, y].Text = labels[x, y].Value.ToString();
                     }
                 }

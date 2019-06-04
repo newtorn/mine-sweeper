@@ -23,7 +23,8 @@ namespace mine_sweeper
         {
             InitializeComponent();
             this.Text = "";
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Red;
+            this.BackColor = System.Drawing.Color.FromArgb(8, 46, 84);
 
             this.value = 0;
             this.timer = new Timer();

@@ -167,7 +167,7 @@
             // 
             // gamePanel
             // 
-            this.gamePanel.BackColor = System.Drawing.Color.DarkRed;
+            this.gamePanel.BackColor = System.Drawing.Color.Transparent;
             this.gamePanel.Location = new System.Drawing.Point(140, 0);
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.Size = new System.Drawing.Size(400, 270);
