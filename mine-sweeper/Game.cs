@@ -47,10 +47,11 @@ namespace mine_sweeper
             this.gamePanel.Refresh();
         }
 
-        private void StartGame()
-        {
+        private void StartGame(Size filedSize)
+        {    
             this.firstClick = true;
             this.scores = 0;
+            this.fieldSize = fieldSize;
             this.status = GameStatus.Keep;
             Createlabels(new Size(45, 45), fieldSize.Width, fieldSize.Height);
             this.countBombs =
@@ -226,20 +227,17 @@ namespace mine_sweeper
 
         private void lowButton_Click(object sender, EventArgs e)
         {
-            this.fieldSize = new Size(9, 9);
-            StartGame();
+            StartGame(new Size(9, 9));
         }
 
         private void middleButton_Click(object sender, EventArgs e)
         {
-            this.fieldSize = new Size(10, 10);
-            StartGame();
+            StartGame(new Size(10, 10));
         }
 
         private void highButton_Click(object sender, EventArgs e)
         {
-            this.fieldSize = new Size(15, 15);
-            StartGame();
+            StartGame(new Size(15, 15));
         }
         private void Game_Resize(object sender, EventArgs e)
         {
