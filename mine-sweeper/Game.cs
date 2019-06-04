@@ -51,7 +51,7 @@ namespace mine_sweeper
         {    
             this.firstClick = true;
             this.scores = 0;
-            this.fieldSize = fieldSize;
+            this.fieldSize = new Size(filedSize.Width, filedSize.Height);
             this.status = GameStatus.Keep;
             Createlabels(new Size(45, 45), fieldSize.Width, fieldSize.Height);
             this.countBombs =
