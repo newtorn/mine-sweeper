@@ -376,7 +376,16 @@ namespace mine_sweeper
 
         private void CheckWin()
         {
-            foreach (MsLabel label in labels) { if (!label.Flag && label.Bomb) return; }
+            bool rest = false;
+            foreach (MsLabel label in labels)
+            {
+                if (!label.Flag)
+                {
+                    if (label.Bomb) return;
+                    else if (label.Text.Equals("")) rest = true;
+                }
+            }
+            if (rest) return;
             foreach (MsLabel label in labels) label.MouseClick -= MouseClick;
             this.status = GameStatus.Won;
             this.timer.Stop();
