@@ -47,16 +47,15 @@ namespace mine_sweeper
             this.gamePanel.Refresh();
         }
 
-        private void StartGame(Size filedSize)
+        private void StartGame(Size filedSize, int countBombs)
         {    
             this.firstClick = true;
             this.scores = 0;
             this.fieldSize = new Size(filedSize.Width, filedSize.Height);
             this.status = GameStatus.Keep;
             Createlabels(new Size(45, 45), fieldSize.Width, fieldSize.Height);
-            this.countBombs =
-                (int)Math.Round((decimal)((labels.GetLength(0) * 0.5) * (labels.GetLength(1) * 0.5)));
-            this.bombLabel.Text = (this.countBombs - 1).ToString();
+            this.countBombs = countBombs;
+            this.bombLabel.Text = this.countBombs.ToString();
             this.scoreLabel.Text = this.scores.ToString();
         }
 
@@ -227,17 +226,17 @@ namespace mine_sweeper
 
         private void lowButton_Click(object sender, EventArgs e)
         {
-            StartGame(new Size(9, 9));
+            StartGame(new Size(9, 9), 10);
         }
 
         private void middleButton_Click(object sender, EventArgs e)
         {
-            StartGame(new Size(10, 10));
+            StartGame(new Size(16, 16), 40);
         }
 
         private void highButton_Click(object sender, EventArgs e)
         {
-            StartGame(new Size(15, 15));
+            StartGame(new Size(30, 16), 99);
         }
         private void Game_Resize(object sender, EventArgs e)
         {
@@ -286,7 +285,7 @@ namespace mine_sweeper
         
         private void SetBombs()
         {
-            int setBombs = 1;
+            int setBombs = 0;
             while (setBombs != countBombs)
             {
                 bool retry = true;
@@ -378,6 +377,7 @@ namespace mine_sweeper
         private void CheckWin()
         {
             foreach (MsLabel label in labels) { if (!label.Flag && label.Bomb) return; }
+            foreach (MsLabel label in labels) label.MouseClick -= MouseClick;
             this.status = GameStatus.Won;
             this.timer.Stop();
             MessageBox.Show("U win with " + this.scores.ToString() + " scores");
@@ -396,7 +396,7 @@ namespace mine_sweeper
             }
             if (this.scores != oldScores)
             {
-                this.bombLabel.Text = (this.countBombs - 1).ToString();
+                this.bombLabel.Text = this.countBombs.ToString();
                 this.scoreLabel.Text = this.scores.ToString();
             }
         }
