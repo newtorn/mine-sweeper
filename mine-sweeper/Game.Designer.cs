@@ -62,13 +62,13 @@
             // 
             // titleBar
             // 
-            this.titleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.titleBar.BackColor = System.Drawing.Color.Transparent;
             this.titleBar.Controls.Add(this.controlBar);
             this.titleBar.Controls.Add(this.titleBarOver);
             this.titleBar.Location = new System.Drawing.Point(0, 0);
             this.titleBar.Margin = new System.Windows.Forms.Padding(0);
             this.titleBar.Name = "titleBar";
-            this.titleBar.Size = new System.Drawing.Size(680, 30);
+            this.titleBar.Size = new System.Drawing.Size(893, 38);
             this.titleBar.TabIndex = 0;
             // 
             // controlBar
@@ -80,8 +80,8 @@
             this.controlBar.Location = new System.Drawing.Point(0, 0);
             this.controlBar.Margin = new System.Windows.Forms.Padding(0);
             this.controlBar.Name = "controlBar";
-            this.controlBar.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
-            this.controlBar.Size = new System.Drawing.Size(82, 30);
+            this.controlBar.Padding = new System.Windows.Forms.Padding(13, 6, 7, 6);
+            this.controlBar.Size = new System.Drawing.Size(109, 38);
             this.controlBar.TabIndex = 4;
             // 
             // zoomButton
@@ -92,10 +92,10 @@
             this.zoomButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.zoomButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.zoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zoomButton.Location = new System.Drawing.Point(58, 8);
+            this.zoomButton.Location = new System.Drawing.Point(77, 10);
             this.zoomButton.Margin = new System.Windows.Forms.Padding(0);
             this.zoomButton.Name = "zoomButton";
-            this.zoomButton.Size = new System.Drawing.Size(14, 14);
+            this.zoomButton.Size = new System.Drawing.Size(19, 18);
             this.zoomButton.TabIndex = 3;
             this.zoomButton.UseVisualStyleBackColor = false;
             this.zoomButton.Click += new System.EventHandler(this.zoomButton_Click);
@@ -110,10 +110,10 @@
             this.minimiseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.minimiseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.minimiseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimiseButton.Location = new System.Drawing.Point(34, 8);
-            this.minimiseButton.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.minimiseButton.Location = new System.Drawing.Point(45, 10);
+            this.minimiseButton.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             this.minimiseButton.Name = "minimiseButton";
-            this.minimiseButton.Size = new System.Drawing.Size(14, 14);
+            this.minimiseButton.Size = new System.Drawing.Size(19, 18);
             this.minimiseButton.TabIndex = 2;
             this.minimiseButton.UseVisualStyleBackColor = false;
             this.minimiseButton.Click += new System.EventHandler(this.minimiseButton_Click);
@@ -129,10 +129,10 @@
             this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.Color.Transparent;
-            this.closeButton.Location = new System.Drawing.Point(10, 8);
+            this.closeButton.Location = new System.Drawing.Point(13, 10);
             this.closeButton.Margin = new System.Windows.Forms.Padding(0);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(14, 14);
+            this.closeButton.Size = new System.Drawing.Size(19, 18);
             this.closeButton.TabIndex = 1;
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
@@ -147,7 +147,7 @@
             this.titleBarOver.Location = new System.Drawing.Point(0, 0);
             this.titleBarOver.Margin = new System.Windows.Forms.Padding(0);
             this.titleBarOver.Name = "titleBarOver";
-            this.titleBarOver.Size = new System.Drawing.Size(680, 30);
+            this.titleBarOver.Size = new System.Drawing.Size(893, 38);
             this.titleBarOver.TabIndex = 0;
             this.titleBarOver.Text = "MineSweeper";
             this.titleBarOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,17 +160,19 @@
             this.backPanel.Controls.Add(this.gamePanel);
             this.backPanel.Controls.Add(this.displayStrip);
             this.backPanel.Controls.Add(this.operateStrip);
-            this.backPanel.Location = new System.Drawing.Point(0, 30);
+            this.backPanel.Location = new System.Drawing.Point(0, 38);
+            this.backPanel.Margin = new System.Windows.Forms.Padding(4);
             this.backPanel.Name = "backPanel";
-            this.backPanel.Size = new System.Drawing.Size(680, 300);
+            this.backPanel.Size = new System.Drawing.Size(893, 375);
             this.backPanel.TabIndex = 1;
             // 
             // gamePanel
             // 
             this.gamePanel.BackColor = System.Drawing.Color.Transparent;
-            this.gamePanel.Location = new System.Drawing.Point(140, 0);
+            this.gamePanel.Location = new System.Drawing.Point(180, 0);
+            this.gamePanel.Margin = new System.Windows.Forms.Padding(0);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(400, 270);
+            this.gamePanel.Size = new System.Drawing.Size(533, 338);
             this.gamePanel.TabIndex = 3;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.PainGamePanel);
             this.gamePanel.Resize += new System.EventHandler(this.ResizeGamePanel);
@@ -178,6 +180,7 @@
             // displayStrip
             // 
             this.displayStrip.AutoSize = false;
+            this.displayStrip.BackColor = System.Drawing.Color.Transparent;
             this.displayStrip.Dock = System.Windows.Forms.DockStyle.Right;
             this.displayStrip.GripMargin = new System.Windows.Forms.Padding(0);
             this.displayStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -189,10 +192,10 @@
             this.bombTitle,
             this.bombLabel});
             this.displayStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.displayStrip.Location = new System.Drawing.Point(540, 0);
+            this.displayStrip.Location = new System.Drawing.Point(713, 0);
             this.displayStrip.Name = "displayStrip";
-            this.displayStrip.Padding = new System.Windows.Forms.Padding(0, 90, 0, 0);
-            this.displayStrip.Size = new System.Drawing.Size(140, 300);
+            this.displayStrip.Padding = new System.Windows.Forms.Padding(0, 102, 0, 0);
+            this.displayStrip.Size = new System.Drawing.Size(180, 375);
             this.displayStrip.TabIndex = 2;
             this.displayStrip.Text = "ToolStrip";
             // 
@@ -211,7 +214,7 @@
             this.scoreLabel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.Margin = new System.Windows.Forms.Padding(0);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(115, 20);
+            this.scoreLabel.Size = new System.Drawing.Size(115, 25);
             this.scoreLabel.Text = "0";
             // 
             // stripSeparator
@@ -239,12 +242,13 @@
             this.bombLabel.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.bombLabel.Margin = new System.Windows.Forms.Padding(0);
             this.bombLabel.Name = "bombLabel";
-            this.bombLabel.Size = new System.Drawing.Size(115, 20);
+            this.bombLabel.Size = new System.Drawing.Size(115, 25);
             this.bombLabel.Text = "0";
             // 
             // operateStrip
             // 
             this.operateStrip.AutoSize = false;
+            this.operateStrip.BackColor = System.Drawing.Color.Transparent;
             this.operateStrip.Dock = System.Windows.Forms.DockStyle.Left;
             this.operateStrip.GripMargin = new System.Windows.Forms.Padding(0);
             this.operateStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -256,8 +260,8 @@
             this.operateStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.operateStrip.Location = new System.Drawing.Point(0, 0);
             this.operateStrip.Name = "operateStrip";
-            this.operateStrip.Padding = new System.Windows.Forms.Padding(0, 90, 0, 0);
-            this.operateStrip.Size = new System.Drawing.Size(140, 300);
+            this.operateStrip.Padding = new System.Windows.Forms.Padding(0, 112, 0, 0);
+            this.operateStrip.Size = new System.Drawing.Size(180, 375);
             this.operateStrip.TabIndex = 1;
             this.operateStrip.Text = "ToolStrip";
             // 
@@ -300,14 +304,14 @@
             // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(680, 330);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.ClientSize = new System.Drawing.Size(893, 412);
             this.ControlBox = false;
             this.Controls.Add(this.backPanel);
             this.Controls.Add(this.titleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Activated += new System.EventHandler(this.Game_Activated);

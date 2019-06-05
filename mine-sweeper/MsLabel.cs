@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace mine_sweeper
 {
@@ -16,6 +17,7 @@ namespace mine_sweeper
         private bool bomb;
         private bool flag;
         private Timer timer;
+        private Color[] vcolors;
         #endregion
 
         #region Init stuff
@@ -23,9 +25,20 @@ namespace mine_sweeper
         {
             InitializeComponent();
             this.Text = "";
-            this.ForeColor = System.Drawing.Color.Red;
-            this.BackColor = System.Drawing.Color.FromArgb(8, 46, 84);
-
+            this.ForeColor = Color.Red;
+            this.BackColor = Color.FromArgb(8, 46, 84);
+            vcolors = new Color[] {
+                Color.Transparent,
+                Color.FromArgb(65, 105, 225),
+                Color.FromArgb(0, 160, 0),
+                Color.FromArgb(255, 0, 0),
+                Color.FromArgb(65, 165, 225),
+                Color.FromArgb(0, 160, 0),
+                Color.FromArgb(255, 0, 0),
+                Color.FromArgb(65, 105, 225),
+                Color.FromArgb(0, 160, 0),
+                Color.FromArgb(255, 0, 0),
+            };
             this.value = 0;
             this.timer = new Timer();
             this.timer.Interval = 2000;
@@ -76,6 +89,13 @@ namespace mine_sweeper
         #endregion
 
         #region Methods
+        public void UpdateColor()
+        {
+            this.BackColor = System.Drawing.Color.FromArgb(0, 255, 255, 255);
+            if (this.value >= 0 && this.value < 10)
+                this.ForeColor = this.vcolors[this.value];
+        }
+
         public void SelectLab(string wic)
         {
             this.Text = "";
