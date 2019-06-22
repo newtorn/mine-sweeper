@@ -17,6 +17,7 @@ namespace mine_sweeper
         private bool bomb;
         private bool flag;
         private Timer timer;
+        private Color oldColor;
         private Color[] vcolors;
         #endregion
 
@@ -91,7 +92,7 @@ namespace mine_sweeper
         #region Methods
         public void UpdateColor()
         {
-            this.BackColor = System.Drawing.Color.FromArgb(0, 255, 255, 255);
+            this.BackColor = Color.FromArgb(0, 255, 255, 255);
             if (this.value >= 0 && this.value < 10)
                 this.ForeColor = this.vcolors[this.value];
         }
@@ -139,6 +140,24 @@ namespace mine_sweeper
             this.Text = "lost";
             this.ForeColor = System.Drawing.Color.Red;
             this.timer.Stop();
+        }
+
+
+        private void MsLabel_MouseLeave(object sender, EventArgs e)
+        {
+            if (this.Text.Equals(""))
+            {
+                this.BackColor = oldColor;
+            }
+        }
+
+        private void MsLabel_MouseEnter(object sender, EventArgs e)
+        {
+            if (this.Text.Equals(""))
+            {
+                this.oldColor = this.BackColor;
+                this.BackColor = Color.FromArgb(220, 220, 220);
+            }
         }
         #endregion
     }

@@ -245,7 +245,7 @@ namespace mine_sweeper
         #endregion
 
         #region GameLogic
-        public void MouseClick(object sender, MouseEventArgs mouse)
+        new public void MouseClick(object sender, MouseEventArgs mouse)
         {
             MsLabel selectedLabel = (MsLabel)sender;
             if (mouse.Button.ToString().Equals("Right") && selectedLabel.Text.Equals(""))
@@ -284,7 +284,7 @@ namespace mine_sweeper
                 }
             }
         }
-        
+
         private void SetBombs()
         {
             int setBombs = 0;

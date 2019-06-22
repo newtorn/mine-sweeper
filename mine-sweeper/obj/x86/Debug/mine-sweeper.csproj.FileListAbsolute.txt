@@ -29,9 +29,6 @@ C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\MineSweep
 C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\MineSweeper.pdb
 C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\bin\Debug\MineSweeper.exe
 C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\bin\Debug\MineSweeper.pdb
-C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\MineSweeper.exe
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\MineSweeper.pdb
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\bin\Debug\MineSweeper.exe
@@ -41,3 +38,6 @@ C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Load
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.Properties.Resources.resources
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csproj.GenerateResource.Cache
 C:\Users\xiaom\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine_sweeper.MsLabel.resources
+C:\Users\Administrator\Desktop\mine-sweeper\mine-sweeper\obj\x86\Debug\mine-sweeper.csproj.GenerateResource.Cache

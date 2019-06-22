@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoSize = false;
-            this.Font = new System.Drawing.Font("Comic Sans MS", 10.3F, System.Drawing.FontStyle.Bold); 
+            this.SuspendLayout();
+            // 
+            // MsLabel
+            // 
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Font = new System.Drawing.Font("Comic Sans MS", 10.3F, System.Drawing.FontStyle.Bold);
             this.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MouseEnter += new System.EventHandler(this.MsLabel_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.MsLabel_MouseLeave);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
